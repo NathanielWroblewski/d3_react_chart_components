@@ -1,0 +1,57 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+}
+
+p {
+  font-family: 'Libre Baskerville', serif;
+  color: #8E98A0;
+}
+
+svg { background-color: white; }
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #8E98A0;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+  fill: #8E98A0;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 5px;
+}
+
+.point {
+  fill: white;
+  stroke: steelblue;
+  stroke-width: 5px;
+}
+
+.point:nth-child(2n + 1) {
+  display: none;
+}
+
+.axis text:nth-child(odd) {
+  display: none;
+}
+
