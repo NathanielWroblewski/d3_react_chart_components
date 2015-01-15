@@ -12,6 +12,9 @@ Charts.Line = React.createClass({
   },
 
   render: function() {
-    return (<path className="line" d={this.scaledLine()} />)
+    return (
+      <path className={this.props.series + ' line'}
+            d={this.scaledLine()} />
+    )
   }
 })

@@ -37,21 +37,17 @@ svg { background-color: white; }
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: orange;
   stroke-width: 5px;
 }
 
 .point {
   fill: white;
-  stroke: steelblue;
   stroke-width: 5px;
 }
 
-.point:nth-child(2n + 1) {
-  display: none;
-}
+.sales.line, .sales.point { stroke: steelblue; }
+.purchases.line, .purchases.point { stroke: orange; }
 
-.axis text:nth-child(odd) {
-  display: none;
-}
+.point:nth-child(2n + 1) { display: none; }
 

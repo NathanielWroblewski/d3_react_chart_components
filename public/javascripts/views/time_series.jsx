@@ -22,18 +22,22 @@ Charts.LineCharts.TimeSeries = React.createClass({
 
   xscale: function() {
     return d3.time.scale().range(this.xAxisDimensions()).domain(
-      d3.extent(this.formattedDataset(), function(datum) { return datum.x })
+      d3.extent(this.formatDataset(this.combinedDataset()), function(datum) {
+        return datum.x
+      })
     );
   },
 
   yscale: function() {
     return d3.scale.linear().range(this.yAxisDimensions()).domain(
-      d3.extent(this.formattedDataset(), function(datum) { return datum.y })
+      d3.extent(this.formatDataset(this.combinedDataset()), function(datum) {
+        return datum.y
+      })
     );
   },
 
-  formattedDataset: function() {
-    return this.props.dataset.map(function(datum) {
+  formatDataset: function(dataset) {
+    return dataset.map(function(datum) {
       return {
         x: d3.time.format(this.props.timeFormat).parse(datum.x),
         y: +datum.y
@@ -41,15 +45,29 @@ Charts.LineCharts.TimeSeries = React.createClass({
     }.bind(this));
   },
 
+  combinedDataset: function() {
+    return d3.merge(d3.values(this.props.datasets))
+  },
+
   render: function() {
     return (
       <svg height={this.props.height + 'px'} width={this.props.width + 'px'}>
-        <Charts.Line xscale={this.xscale()}
-                        yscale={this.yscale()}
-                        dataset={this.formattedDataset()} />
-        <Charts.Points xscale={this.xscale()}
-                          yscale={this.yscale()}
-                          dataset={this.formattedDataset()} />
+        { d3.keys(this.props.datasets).map(function(series) {
+          return (
+            <Charts.Line xscale={this.xscale()}
+                         yscale={this.yscale()}
+                         dataset={this.formatDataset(this.props.datasets[series])}
+                         series={series} />
+          )
+        }.bind(this))}
+        { d3.keys(this.props.datasets).map(function(series) {
+          return (
+            <Charts.Points xscale={this.xscale()}
+                           yscale={this.yscale()}
+                           dataset={this.formatDataset(this.props.datasets[series])}
+                           series={series} />
+          )
+        }.bind(this))}
         <Charts.Axes.X scale={this.xscale()}
                           offset={this.dimensions().bottom}
                           tickCount={this.props.xAxisTickCount}/>
