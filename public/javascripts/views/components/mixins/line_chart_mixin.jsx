@@ -8,6 +8,7 @@ Charts.Mixins.LineChart = {
       height:         400,
       width:          400,
       ylabel:         '',
+      xlabel:         '',
       margins:        {top: 20, left: 20, right: 20, bottom: 20},
       xAxisTickCount: 0,
       yAxisTickCount: 0,
@@ -101,6 +102,8 @@ Charts.Mixins.LineChart = {
       <g className="axes">
         <Charts.Axes.X scale={this.xscale()}
                        offset={this.dimensions().bottom}
+                       label={this.props.xlabel}
+                       labelOffset={this.dimensions()['right']}
                        tickCount={this.props.xAxisTickCount}
                        orientation="bottom" />
         <Charts.Axes.Y scale={this.yscale()}

@@ -33,6 +33,7 @@ svg { background-color: white; }
   font-family: sans-serif;
   font-size: 11px;
   fill: #8E98A0;
+  stroke: #8E98A0;
 }
 
 .line {

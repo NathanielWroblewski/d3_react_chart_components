@@ -5,18 +5,19 @@ Charts.Axes.Y = React.createClass({
   mixins: [Charts.Mixins.Axes],
 
   transformAxis: function() {
-    return d3.select(this.getDOMNode())
-        .attr('transform', 'translate(' + this.props.offset + ',0)')
-      .call(this.scaledAxis())
-      .append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '.71em')
-        .style('text-anchor', 'end')
-        .text(this.props.label);
+    return d3.select(this.getDOMNode()).call(this.scaledAxis())
   },
 
   render: function() {
-    return (<g className="y axis"></g>)
+    var offset = this.props.offset,
+        style  = {textAnchor: 'end'}
+
+    return (
+      <g className="y axis" transform={"translate(" + offset + ",0)"}>
+        <text transform="rotate(-90)" y="6" dy="0.71em" x={-offset} style={style} >
+          {this.props.label}
+        </text>
+      </g>
+    )
   }
 })
