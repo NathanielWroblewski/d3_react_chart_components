@@ -10,8 +10,8 @@ Charts.Mixins.LineChart = {
       ylabel:         '',
       xlabel:         '',
       margins:        {top: 20, left: 20, right: 20, bottom: 20},
-      xAxisTickCount: 0,
-      yAxisTickCount: 0,
+      xAxisTickCount: 10,
+      yAxisTickCount: 10,
       onMouseEnter:   function() {},
       onMouseLeave:   function() {},
       onMouseClick:   function() {}
