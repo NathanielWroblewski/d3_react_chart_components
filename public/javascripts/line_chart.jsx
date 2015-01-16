@@ -58,7 +58,9 @@ $(document).ready(function() {
       yAxisTickCount={3}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onMouseClick={onMouseClick} />,
+      onMouseClick={onMouseClick}
+      threshold={true}
+      thresholdValue={4} />,
     lineChartElement
   );
 })

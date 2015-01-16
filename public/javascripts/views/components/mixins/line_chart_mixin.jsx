@@ -114,5 +114,16 @@ Charts.Mixins.LineChart = {
                        orientation="left" />
       </g>
     )
+  },
+
+  renderThreshold: function() {
+    if (this.props.threshold) {
+      return (
+        <Charts.Threshold width={this.props.width}
+                          height={this.props.height}
+                          value={this.yscale()(this.props.thresholdValue)} />
+      )
+    }
   }
+
 }

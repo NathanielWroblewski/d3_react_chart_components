@@ -23,6 +23,7 @@ Charts.LineCharts.TimeSeries = React.createClass({
   render: function() {
     return (
       <svg height={this.props.height + 'px'} width={this.props.width + 'px'}>
+        { this.renderThreshold() }
         { this.renderLines() }
         { this.renderPoints() }
         { this.renderAxes() }

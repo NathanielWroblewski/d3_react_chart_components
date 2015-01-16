@@ -1,7 +1,7 @@
 Chart components for [React](http://facebook.github.io/react/) using [d3.js](http://d3js.org/)
 ---
 
-![Screenshot](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/screenshots/screenshot.png)
 
 Render a Time Series
 ---
@@ -48,13 +48,30 @@ var margins = { top: 20, left: 30, bottom: 30, right: 20},
 
   React.render(
     <Charts.LineCharts.TimeSeries datasets={datasets}
-                                     height={300}
-                                     width={800}
-                                     ylabel={''}
-                                     timeFormat={'%d-%b-%y'}
-                                     margins={margins}
-                                     xAxisTickCount={5}
-                                     yAxisTickCount={3} />,
+                                  height={300}
+                                  width={800}
+                                  ylabel={''}
+                                  timeFormat={'%d-%b-%y'}
+                                  margins={margins}
+                                  xAxisTickCount={5}
+                                  yAxisTickCount={3} />,
     document.getElementById('chart')
   )
 ```
+
+Threshold
+---
+
+Add threshold boolean and threshold value to render:
+
+```js
+React.render(
+  <Charts.LineCharts.LineChart datasets={datasets}
+                               height={300}
+                               width={800}
+                               threshold={true}
+                               thresholdValue={4} />,
+  document.getElementById('chart')
+)
+```
+![Threshold screenshot](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/screenshots/threshold.png)

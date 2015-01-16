@@ -52,8 +52,8 @@ $(document).ready(function() {
       datasets={timeseries}
       height={height}
       width={width}
-      ylabel={'BOOOOOYA'}
-      xlabel={'BOOYAKASHA'}
+      ylabel={''}
+      xlabel={''}
       timeFormat={'%d-%b-%y'}
       margins={margins}
       xAxisTickCount={5}

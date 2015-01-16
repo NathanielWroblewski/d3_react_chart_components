@@ -36,6 +36,11 @@ svg { background-color: white; }
   stroke: #8E98A0;
 }
 
+.threshold line {
+  fill: #8E98A0;
+  stroke: #8E98A0;
+}
+
 .line {
   fill: none;
   stroke: orange;
@@ -46,6 +51,21 @@ svg { background-color: white; }
   fill: white;
   stroke-width: 5px;
   cursor: pointer;
+}
+
+#line-chart svg {
+  border: 2px solid #eee;
+}
+
+#line-chart .threshold line {
+  stroke: #eee;
+  fill: #eee;
+}
+
+#line-chart .axis path, #line-chart .axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
 }
 
 #timeseries .sales.line, #timeseries .sales.point { stroke: steelblue; }
