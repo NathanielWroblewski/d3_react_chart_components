@@ -36,15 +36,15 @@ $(document).ready(function() {
   };
 
   var onMouseEnter = function() {
-    console.log('boom')
+    console.log('time-boom')
   };
 
   var onMouseLeave = function() {
-    console.log('pop')
+    console.log('time-pop')
   };
 
   var onMouseClick = function() {
-    console.log('boompop')
+    console.log('time-boompop')
   };
 
   React.render(

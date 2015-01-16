@@ -24,10 +24,11 @@ Charts.Mixins.LineChart = {
 
   setListeners: function() {
     var props = this.props
-
-    d3.selectAll('.point').on('mouseenter', props.onMouseEnter)
-                          .on('mouseleave', props.onMouseLeave)
-                          .on('click', props.onMouseClick)
+    d3.select(this.getDOMNode())
+      .selectAll('.point')
+        .on('mouseenter', props.onMouseEnter)
+        .on('mouseleave', props.onMouseLeave)
+        .on('click', props.onMouseClick)
   },
 
   dimensions: function() {
