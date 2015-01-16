@@ -44,10 +44,13 @@ svg { background-color: white; }
 .point {
   fill: white;
   stroke-width: 5px;
+  cursor: pointer;
 }
 
-.sales.line, .sales.point { stroke: steelblue; }
-.purchases.line, .purchases.point { stroke: orange; }
+#timeseries .sales.line, #timeseries .sales.point { stroke: steelblue; }
+#timeseries .purchases.line, #timeseries .purchases.point { stroke: #FFEBCD; }
+#timeseries .point:nth-child(2n + 1) { display: none; }
 
-.point:nth-child(2n + 1) { display: none; }
+#line-chart .sales.line, #line-chart .sales.point { stroke: navy; }
+#line-chart .purchases.line, #line-chart .purchases.point { stroke: orange; }
 

@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var chartElement = document.getElementById('chart'),
+  var timeseriesElement = document.getElementById('timeseries'),
       height  = 300,
       width   = 800,
       margins = { top: 20, left: 30, bottom: 30, right: 20}
 
-  var datasets = {
+  var timeseries = {
     sales: [
       {x: '01-May-12', y: 1},
       {x: '30-Apr-12', y: 2},
@@ -33,17 +33,33 @@ $(document).ready(function() {
       {x: '12-Apr-12', y: 5},
       {x: '11-Apr-12', y: 6}
     ]
-  }
+  };
+
+  var onMouseEnter = function() {
+    console.log('boom')
+  };
+
+  var onMouseLeave = function() {
+    console.log('pop')
+  };
+
+  var onMouseClick = function() {
+    console.log('boompop')
+  };
 
   React.render(
-    <Charts.LineCharts.TimeSeries datasets={datasets}
-                                     height={height}
-                                     width={width}
-                                     ylabel={''}
-                                     timeFormat={'%d-%b-%y'}
-                                     margins={margins}
-                                     xAxisTickCount={5}
-                                     yAxisTickCount={3} />,
-    chartElement
-  )
+    <Charts.LineCharts.TimeSeries
+      datasets={timeseries}
+      height={height}
+      width={width}
+      ylabel={''}
+      timeFormat={'%d-%b-%y'}
+      margins={margins}
+      xAxisTickCount={5}
+      yAxisTickCount={3}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onMouseClick={onMouseClick} />,
+    timeseriesElement
+  );
 })

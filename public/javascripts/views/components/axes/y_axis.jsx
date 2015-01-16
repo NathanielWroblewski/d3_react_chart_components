@@ -2,18 +2,9 @@ namespace('Charts.Axes')
 
 Charts.Axes.Y = React.createClass({
 
-  componentDidMount: function() {
-    this.renderAxis()
-  },
+  mixins: [Charts.Mixins.Axes],
 
-  scaledAxis: function() {
-    return d3.svg.axis()
-      .ticks(this.props.tickCount)
-      .scale(this.props.scale)
-      .orient('left')
-  },
-
-  renderAxis: function() {
+  transformAxis: function() {
     return d3.select(this.getDOMNode())
         .attr('transform', 'translate(' + this.props.offset + ',0)')
       .call(this.scaledAxis())

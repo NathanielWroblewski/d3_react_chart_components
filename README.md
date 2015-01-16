@@ -1,12 +1,12 @@
 Chart components for [React](http://facebook.github.io/react/) using [d3.js](http://d3js.org/)
 ---
 
-![Screenshot](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/screen_shot.png)
+![Screenshot](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/screenshot.png)
 
 Render a Time Series
 ---
 
-Time series can render multiple datasets along a single timeline, and takes data of the shape:
+Time series/Line Charts can render multiple datasets along a single timeline, and takes data of the shape:
 
 ```js
 var datasets = {
@@ -58,7 +58,3 @@ var margins = { top: 20, left: 30, bottom: 30, right: 20},
     document.getElementById('chart')
   )
 ```
-
-Then, voilà:
-
-![Multiple Timeseries Single Axis](https://raw.githubusercontent.com/NathanielWroblewski/d3_react_chart_components/master/multiple_time_series_screenshot.png)
