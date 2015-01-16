@@ -16,7 +16,9 @@ Charts.Points = React.createClass({
                     cy={yscale(datum.y)}
                     r="10"
                     key={index}
-                    data-index={index} />
+                    data-index={index}
+                    data-x={datum.x}
+                    data-y={datum.y} />
           )
         })}
       </g>
